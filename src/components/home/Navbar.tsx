@@ -17,18 +17,17 @@ export const Navbar: React.FC = () => {
 
   return (
     <div
-      className={`w-full rounded-lg p-4 flex flex-col gap-4 items-center justify-center md:justify-between fixed top-0 z-50 ${isTop ? '' : 'bg-white bg-opacity-70'
+      className={`w-full rounded-lg p-4 flex flex-col gap-4 items-center justify-center md:justify-between fixed top-0 z-50 ${isTop ? '' : 'bg-gray-200 bg-opacity-70'
         }`}
     >
-      <h1 className="uppercase font-semibold cursor-pointer font-serif text-5xl">
+      <h1 className="uppercase font-semibold text-black cursor-pointer font-serif text-8xl">
         AVA
       </h1>
-      <nav className="flex items-center gap-4 text-lg">
+      <nav className="flex items-center text-black font-semibold gap-4 text-3xl">
         <a
           href="#inicio"
           className="
-            xl:py-1
-            xl:px-2
+            xl:py-1 xl:px-2
             rounded-lg
             hover:bg-gray-100
             transition-colors

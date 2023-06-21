@@ -7,9 +7,9 @@ export const Ava: React.FC = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen justify-between">
-        <div id="inicio" className="bg-beach bg-cover bg-center w-full h-screen flex flex-col justify-start">
+        <div id="inicio" className="bg-beach bg-cover bg-center w-full h-screen relative">
           <Navbar />
-          <div className="flex justify-end items-center flex-grow">
+          <div className="mt-56">
             <Home />
           </div>
         </div>

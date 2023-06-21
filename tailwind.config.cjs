@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        beach: "url('beach.jpg')",
+        beach: "url('background.jpg')",
       }),
       fontFamily: {
         custom: [
