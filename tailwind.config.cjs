@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
   content: [
@@ -15,16 +14,12 @@ module.exports = {
       backgroundImage: (theme) => ({
         beach: "url('background.jpg')",
       }),
+      backgroundPosition: {
+        left: "28% center",
+        "slightly-right": "30% center",
+      },
       fontFamily: {
-        custom: [
-          "DMSans",
-          "ui-serif",
-          "Georgia",
-          "Cambria",
-          "Times New Roman",
-          "Times",
-          "serif",
-        ],
+        ava: ['"Kumar One Outline"', "cursive"],
       },
     },
   },
