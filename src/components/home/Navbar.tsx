@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<{ activeSection: string | null }> = ({ activeSection }) => {
   const [isTop, setIsTop] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,10 +17,14 @@ export const Navbar: React.FC = () => {
     };
   }, []);
 
+  const isActive = (section: string) => {
+    return section === activeSection ? "underline" : "";
+  };
+
   return (
-    <div className={`w-full rounded-lg p-4 fixed top-0 z-50 ${isTop ? '' : 'bg-gray-200 bg-opacity-70'}`}>
+    <div className={`w-full rounded-lg p-4 fixed top-0 z-50 ${isTop ? '' : 'bg-ava-navbar bg-opacity-90'}`}>
       <div className="flex md:block justify-between items-center">
-        <h1 className="md:text-center mt-4 uppercase font-semibold text-black cursor-pointer font-ava text-8xl xl:text-center">
+        <h1 className="md:text-center mt-4 uppercase text-gray-800 cursor-pointer font-ava-title text-8xl xl xl:text-center">
           AVA
         </h1>
         <div className="md:hidden">
@@ -43,66 +47,70 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
-      <nav className={`text-black font-semibold lg:text-4xl md:text-3xl ${isOpen ? 'block' : 'hidden'} md:flex md:justify-center md:mt-4`}>
+      <nav className={`text-gray-700 lg:text-3xl md:text-2xl ${isOpen ? 'block' : 'hidden'} md:flex md:justify-center md:mt-4`}>
         <div className="flex flex-col md:flex-row justify-center items-center">
           <a
-            href="#inicio"
-            className="
-              py-1 px-2
-              xl:py-2 xl:px-4
-              rounded-lg
-              hover:bg-gray-100
-              transition-colors
-              text-center
-              my-2
-            "
+            href="#Home"
+            className={`
+        font-menu-navbar
+        py-1 px-2
+        xl:py-2 xl:px-4
+        rounded-md
+        hover:bg-green-100
+        transition-colors
+        text-center
+        my-2
+        ${isActive("Home")}
+      `}
           >
             Inicio
           </a>
           <a
-            href="#coleccion"
-            className="
+            href="#Collection"
+            className={`
               py-1 px-2
               xl:py-2 xl:px-4
-              rounded-lg
-              hover:bg-gray-100
+              font-menu-navbar
+              rounded-md
+              hover:bg-green-100
               transition-colors
               text-center
               my-2
-            "
+              ${isActive("Collection")}
+              `}
+
           >
             Colección
           </a>
-          <a
-            href="#conocenos"
-            className="
-              py-1 px-2
-              xl:py-2 xl:px-4
-              rounded-lg
-              hover:bg-gray-100
-              transition-colors
-              text-center
-              my-2
-            "
-          >
-            Conócenos
+          <a href="#Gallery"
+            className={`
+            py-1 px-2 xl:py-2 xl:px-4 
+            font-menu-navbar 
+            rounded-md hover:bg-green-100 
+            transition-colors 
+            text-center my-2 
+            ${isActive("Gallery")}
+            `}>
+            Galeria
           </a>
           <a
-            href="#contacto"
-            className="
+            href="#Contact"
+            className={`
               py-1 px-2
               xl:py-2 xl:px-4
-              rounded-lg
-              hover:bg-gray-100
+              font-menu-navbar
+              rounded-md
+              hover:bg-green-100
               transition-colors
               text-center
               my-2
-            "
+              ${isActive("Contact")}
+              `}
           >
             Contacto
           </a>
         </div>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 };

@@ -19,7 +19,15 @@ module.exports = {
         "slightly-right": "30% center",
       },
       fontFamily: {
-        ava: ['"Kumar One Outline"', "cursive"],
+        "ava-title": ['"Kumar One Outline"', "cursive"],
+        "menu-navbar": ['"Trirong"'],
+        slogan1: ['"Lancelot"'],
+        slogan2: ['"Qwigley"'],
+        "collection-button": ['"Qwigley"'],
+      },
+      colors: {
+        "ava-navbar": "rgb(158, 210, 198)",
+        "ava-background": "rgb(84, 186, 185)",
       },
     },
   },
